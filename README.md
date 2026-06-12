@@ -6,21 +6,15 @@ canonical policy texts (linked from inside the extension); the `.html`
 pages are the rendered website versions. Source of truth for the `.md`
 files is `docs/` in the private repo — keep them in sync.
 
-## Enable GitHub Pages (one time)
+## Live site
 
-Settings → Pages → "Deploy from a branch" → branch `main`, folder `/ (root)`.
-The site appears at https://toddhoff.github.io/DoubleCheckPublic/
+https://doublecheck.possibility.com/ — GitHub Pages from `main` / root,
+custom domain via a Cloudflare CNAME to `toddhoff.github.io` (done June
+2026; the CNAME file in this repo is what tells GitHub about the domain).
 
 ## After the store listing goes live
 
-Replace `CHROME_STORE_URL_TODO` (two places in `index.html`) with the real
-Chrome Web Store listing URL.
-
-## Optional: custom domain + verified-publisher badge
-
-1. Add a DNS CNAME record: `doublecheck.possibility.com` → `toddhoff.github.io`
-2. Settings → Pages → Custom domain → `doublecheck.possibility.com`
-   (creates a CNAME file; keep "Enforce HTTPS" on)
-3. Verify the domain in Google Search Console, then in the Chrome Web Store
-   dashboard set it as the item's website — the listing gains a
-   "verified publisher" badge.
+1. Replace `CHROME_STORE_URL_TODO` (two places in `index.html`) with the
+   real Chrome Web Store listing URL.
+2. Verified-publisher badge: verify the domain in Google Search Console,
+   then set it as the verified website in the Chrome Web Store dashboard.
