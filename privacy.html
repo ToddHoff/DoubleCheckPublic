@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Double Check</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap docpage">
+    <nav class="crumb"><a href="index.html">← Double Check</a></nav>
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: June 2026.</em></p>
+
+    <p>Double Check helps you verify high-stakes values (account numbers, routing numbers,
+    amounts, IDs) entered into web forms. It is built on one principle:</p>
+    <div class="promise"><strong>The values you verify never leave your computer.</strong></div>
+
+    <h2>What we process, and where</h2>
+    <ul>
+      <li><strong>Verified values</strong> (the numbers you check) are processed entirely on your
+      device, in memory, and are never transmitted, logged, or stored. Not even in hashed form,
+      unless you explicitly enable the optional fingerprint setting described below.</li>
+      <li><strong>Images</strong> you scan or paste for comparison are read by a bundled, offline
+      copy of the Tesseract OCR engine on your device and discarded after text extraction. They
+      are never uploaded anywhere.</li>
+      <li><strong>Read-aloud</strong> uses your device's local text-to-speech voice. Voices that
+      would send text to a network service are never used.</li>
+      <li><strong>Voice input</strong> uses Chrome's on-device speech recognition (the model is
+      downloaded once by Chrome itself). Your audio and the transcript never leave your device;
+      if on-device recognition isn't available, the feature is disabled rather than falling back
+      to any cloud service. Chrome's microphone permission prompt names the website you're on —
+      that is how browsers attribute extension features running in a page — but the audio is
+      processed only on-device and the transcript is seen only by Double Check, never by the
+      website.</li>
+      <li><strong>The verification log</strong> stores metadata only: when and on which site a
+      check happened, the field's label, the format used, the methods used, the outcome, and
+      your attestation. It never contains the verified value. It lives in your browser's
+      extension storage and is never transmitted.</li>
+      <li><strong>Optional fingerprinting</strong> (off by default): if you enable it, the log
+      stores an HMAC-SHA-256 of the verified value, keyed with a random secret that never leaves
+      your device. This lets you later prove a logged check corresponds to a specific value
+      without the value being stored.</li>
+      <li><strong>Settings, custom formats, and per-site format memory</strong> are stored
+      locally in extension storage.</li>
+    </ul>
+
+    <h2>Network traffic</h2>
+    <p>The extension's only network communication is license verification with ExtensionPay
+    (extensionpay.com), our payment provider. ExtensionPay and its payment processor Stripe
+    receive the email address you provide at checkout and your payment status. See their
+    policies: <a href="https://extensionpay.com/privacy">extensionpay.com/privacy</a> and
+    <a href="https://stripe.com/privacy">stripe.com/privacy</a>.</p>
+    <p>There are no analytics, no telemetry, no error reporting, and no other network requests
+    of any kind.</p>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>activeTab + scripting</strong>: lets the extension open its verification card
+      on a page — only when you press the keyboard shortcut, use the right-click menu, or click
+      the toolbar icon on that page. The extension has no standing access to any website.</li>
+      <li><strong>storage</strong>: settings, custom formats, and the metadata-only log.</li>
+      <li><strong>offscreen</strong>: runs the bundled OCR engine.</li>
+      <li><strong>alarms</strong>: deletes old log entries per your retention setting.</li>
+      <li><strong>contextMenus</strong>: the right-click "Double-check this field" item.</li>
+    </ul>
+
+    <h2>Data sharing and sale</h2>
+    <p>We do not collect your data, so we cannot share or sell it. We do not use your data for
+    advertising, creditworthiness, or any purpose at all beyond the local functioning of the
+    extension described above.</p>
+
+    <h2>Your controls</h2>
+    <p>You can clear the verification log, export it, change its retention period, disable
+    fingerprinting (it is off by default), and remove all stored data by uninstalling the
+    extension. All of this is local to your browser.</p>
+
+    <h2>Contact</h2>
+    <p>Questions: <a href="mailto:tmh@possibility.com">tmh@possibility.com</a></p>
+  </div>
+  <footer class="site"><div class="wrap">
+    Double Check is made by Possibility Outpost Inc ·
+    <a href="index.html">Home</a> · <a href="support.html">Support</a> · <a href="terms.html">Terms</a>
+  </div></footer>
+</body>
+</html>

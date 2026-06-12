@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Check — a second pair of eyes for numbers that can’t be wrong</title>
+  <meta name="description" content="Chrome extension that verifies account numbers, routing numbers, amounts and IDs as you enter them — checksums, blind double entry, on-device OCR and voice. Values never leave your device.">
+  <meta property="og:title" content="Double Check">
+  <meta property="og:description" content="A second pair of eyes for numbers that can’t be wrong. Values never leave your device.">
+  <meta property="og:image" content="og.jpg">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- No JavaScript on this site, by design. Nothing here tracks you either. -->
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 56 L40 74 L85 32" fill="none" stroke="#4ade80" stroke-width="13"
+                stroke-linecap="round" stroke-linejoin="round" transform="translate(7,0)"/>
+          <path d="M22 56 L40 74 L85 32" fill="none" stroke="#166534" stroke-width="13"
+                stroke-linecap="round" stroke-linejoin="round" transform="translate(-5,0)"/>
+        </svg>
+      </div>
+      <h1>Double Check</h1>
+      <p class="tag">A second pair of eyes for the numbers that can’t be wrong.</p>
+      <!-- TODO: replace CHROME_STORE_URL_TODO with the real listing URL -->
+      <a class="cta" href="CHROME_STORE_URL_TODO">Add to Chrome — free 7-day trial</a>
+      <div class="subcta">No card required to try · then $4.99/mo, $39/yr, or $99 once</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <p style="font-size:19px">One transposed digit in a wire transfer sends money to the wrong
+      account. Double Check turns the careful-but-manual ritual — read it, re-read it, ask a
+      colleague to look over your shoulder — into a fast, verifiable workflow that happens right
+      in the field you’re typing into.</p>
+      <div class="promise">
+        <strong>And the values you check never leave your computer.</strong> No transmission, no
+        storage, no analytics — OCR and speech recognition run on your device, and the extension
+        can’t even see a page until you invoke it there. Privacy isn’t a policy here; it’s the
+        architecture. (This website has no JavaScript and no tracking either.)
+      </div>
+    </section>
+
+    <section>
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span>
+          <h3>Invoke it on the field</h3>
+          <p>Click into the field and press <kbd>⇧⌘Space</kbd> (Shift+Command+Space; Ctrl+Shift+Space
+          elsewhere) — or right-click → “Double-check this field”.</p>
+        </div>
+        <div class="step"><span class="n">2</span>
+          <h3>Two independent readings</h3>
+          <p>The format is detected and its math verified instantly. Then re-type the value from
+          your source — or scan it, paste a screenshot, or read it aloud.</p>
+        </div>
+        <div class="step"><span class="n">3</span>
+          <h3>Green, attested, logged</h3>
+          <p>A match goes green; you attest; the check is logged (never the value) and the field
+          gets a badge that flips to a warning if anything changes it afterwards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>It explains the mistake, not just flags it</h2>
+      <p>Transposed digits are the classic transcription error — so they get called out by name,
+      with a character-level diff:</p>
+      <img class="shot" src="shot-mismatch.jpg" width="1280" height="800"
+           alt="Double Check showing a mismatch: characters 8 and 9 appear swapped — 21 vs 12, with both entries compared character by character">
+    </section>
+
+    <section>
+      <h2>Everything it does</h2>
+      <div class="grid">
+        <div class="feat"><h3>Real checksum math, not just patterns</h3>
+          <p>22 built-in formats. Routing numbers, IBANs, cards, CLABE, CUSIP, ISIN, VINs, and
+          crypto addresses carry internal check digits — Double Check computes them, so a single
+          wrong digit is often caught before you re-type anything.</p></div>
+        <div class="feat"><h3>Blind double entry</h3>
+          <p>Re-type the value from your source — not from the field. Two independent readings
+          must agree. Empty fields get a safe two-step entry flow.</p></div>
+        <div class="feat"><h3>Amounts taken seriously</h3>
+          <p>US and European separators both parse; ambiguous amounts like “1,234” are refused
+          rather than guessed. Matches confirm in words: <em>one million two hundred thousand
+          and 00/100</em>.</p></div>
+        <div class="feat"><h3>Compare against an image</h3>
+          <p>Scan a screen region or paste a screenshot or phone photo. A bundled OCR engine
+          reads it on your device — images are never uploaded.</p></div>
+        <div class="feat"><h3>Speak it</h3>
+          <p>Read the value aloud from the paper in your hand; Chrome’s on-device speech
+          recognition transcribes it (Chrome 139+). No audio ever leaves your machine.</p></div>
+        <div class="feat"><h3>Hear it read back</h3>
+          <p>A local on-device voice reads the value digit by digit, at the speed you choose —
+          read along on your source.</p></div>
+        <div class="feat"><h3>A badge that stays honest</h3>
+          <p>Verified fields get a “Double-Checked” badge. If the value changes afterwards — any
+          reason, any keystroke — it flips to a warning and the log entry is marked stale.</p></div>
+        <div class="feat"><h3>Proof without the value</h3>
+          <p>Every attested check is logged: when, where, what format, which methods, your
+          attestation — never the value itself. Export CSV/JSON for your records.</p></div>
+        <div class="feat"><h3>It remembers each site</h3>
+          <p>Confirm a field is an IBAN once and the right format is preselected on that site
+          forever after.</p></div>
+        <div class="feat"><h3>Your own formats</h3>
+          <p>Vendor IDs, policy numbers, internal schemes — defined as data (patterns, lengths,
+          checksum algorithms), never code, and shareable with your team as files.</p></div>
+        <div class="feat"><h3>Submit Guard<span class="beta">beta</span></h3>
+          <p>Flip it on for a site and its forms won’t submit while a field you double-check
+          there is unverified or was edited after checking.</p></div>
+        <div class="feat"><h3>Keyboard-first</h3>
+          <p>Invoke, verify, and attest without touching the mouse. Built for people who enter
+          numbers all day.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pricing</h2>
+      <div class="price-row">
+        <div class="price"><div class="amt">$4.99</div><div class="per">per month</div>
+          <p>Cancel anytime.</p></div>
+        <div class="price hot"><div class="amt">$39</div><div class="per">per year</div>
+          <p>Two months free. The plan most people pick.</p></div>
+        <div class="price"><div class="amt">$99</div><div class="per">once, lifetime</div>
+          <p>For people who hate subscriptions.</p></div>
+      </div>
+      <p style="margin-top:14px">Every plan starts with a 7-day free trial — full features, no
+      card required. And core double-entry checking keeps working even without a subscription,
+      because a safety check should never be held hostage.</p>
+    </section>
+
+    <section>
+      <h2>Who it’s for</h2>
+      <p>Accountants and bookkeepers entering wire details. Accounts-payable and treasury teams.
+      Payroll. Paralegals filing with exact case numbers. Crypto users pasting addresses. Anyone
+      who has ever stared at a routing number, looked away, looked back, and wished someone would
+      check it with them.</p>
+      <p><em>Double Check assists verification; responsibility for submitted values remains
+      yours. It’s the second pair of eyes — you’re still the first.</em></p>
+      <!-- TODO: replace CHROME_STORE_URL_TODO with the real listing URL -->
+      <p><a class="cta" style="background:#166534;color:#fff" href="CHROME_STORE_URL_TODO">Add to Chrome</a></p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      Double Check is made by Possibility Outpost Inc ·
+      <a href="support.html">Support</a> ·
+      <a href="privacy.html">Privacy policy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="mailto:tmh@possibility.com">tmh@possibility.com</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Double Check</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap docpage">
+    <nav class="crumb"><a href="index.html">← Double Check</a></nav>
+    <h1>Support</h1>
+
+    <p>Questions, bug reports, feature requests:
+    <strong><a href="mailto:tmh@possibility.com">tmh@possibility.com</a></strong></p>
+
+    <p>When reporting a problem, please include your Chrome version
+    (<code>chrome://version</code>), what you clicked or pressed, and what you expected to
+    happen — <strong>never include the actual values you were verifying</strong>. A screenshot
+    helps, but check it doesn't show sensitive numbers before sending.</p>
+
+    <h2>Quick answers</h2>
+
+    <h3>The keyboard shortcut does nothing.</h3>
+    <p>Check it's actually bound at <code>chrome://extensions/shortcuts</code> — Chrome silently
+    leaves it blank if another extension claimed the combination. On a Mac, also make sure macOS
+    itself doesn't own it (System Settings → Keyboard → Keyboard Shortcuts). The shortcut can't
+    work on Chrome's own pages (<code>chrome://…</code>, the Web Store) — use the toolbar button
+    or right-click menu there. For files opened from disk, enable "Allow access to file URLs" on
+    the extension's card in <code>chrome://extensions</code>.</p>
+
+    <h3>What is ⇧⌘Space?</h3>
+    <p>That's Shift + Command + Space — Chrome shows Mac shortcuts as symbols. ⇧ is Shift,
+    ⌘ is Command, ⌥ is Option, ⌃ is Control.</p>
+
+    <h3>There's no Compare button.</h3>
+    <p>An empty field opens in input mode, which is two steps: step 1 enters the value, step 2
+    re-types it blind — Compare appears in step 2. A field that already has a value opens in
+    verify mode with Compare on the first screen.</p>
+
+    <h3>The field turned blue, not green.</h3>
+    <p>Blue in step 1 means "the format looks right" — the value isn't confirmed yet. Green is
+    reserved for an actual match between your two independent entries.</p>
+
+    <h3>"Microphone access is blocked" when using Speak it.</h3>
+    <p>Chrome's microphone prompt names the website you're on — that's how browsers attribute
+    extension features running in a page. Allow it once per site. If it was dismissed or
+    blocked, click the mic icon in the address bar or check
+    <code>chrome://settings/content/microphone</code>. On a Mac, also confirm Chrome itself is
+    allowed under System Settings → Privacy &amp; Security → Microphone.</p>
+
+    <h3>It's listening but says it didn't hear anything.</h3>
+    <p>Chrome is probably using a different microphone than the one you're speaking into —
+    common with Bluetooth earbuds. Check System Settings → Sound → Input (does the level meter
+    move when you speak?) and Chrome's device choice at the top of
+    <code>chrome://settings/content/microphone</code>. Start reading the digits as soon as
+    "Listening" appears, and read digit by digit.</p>
+
+    <h3>"Couldn't capture this page" when scanning a screen region.</h3>
+    <p>Screen scanning uses the one-time page access Chrome grants when you open Double Check
+    with the shortcut, the right-click menu, or the toolbar button. Re-open it one of those
+    ways, or paste a screenshot instead (⌘V / Ctrl+V works in any entry step).</p>
+
+    <h3>The read-aloud speaker button is missing.</h3>
+    <p>It appears in verify mode and on the green match screen — not during blind entry, where
+    hearing the value would defeat the purpose. If it's disabled with a "no local voice" note,
+    your device has no on-device voice; network voices are deliberately never used.</p>
+
+    <h3>Something looks stale after an update.</h3>
+    <p>Reload any tabs that were open before the update — a page keeps running the code it
+    loaded originally.</p>
+
+    <h3>Where is my license? I switched computers.</h3>
+    <p>Open the toolbar popup → "already paid?" and log in with the email you used at purchase.
+    Subscriptions are managed from Settings → License → Manage subscription.</p>
+
+    <h3>Does Double Check see my account numbers?</h3>
+    <p>The values you verify are processed only on your device and are never transmitted,
+    logged, or stored — see the <a href="privacy.html">privacy policy</a>. The verification log
+    records that a check happened, never the value.</p>
+  </div>
+  <footer class="site"><div class="wrap">
+    Double Check is made by Possibility Outpost Inc ·
+    <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+  </div></footer>
+</body>
+</html>
