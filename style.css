@@ -32,7 +32,8 @@ header.site {
 }
 .logo svg { width: 72%; height: 72%; }
 header.site h1 { font-size: 40px; margin: 0 0 10px; letter-spacing: -.5px; }
-header.site .tag { font-size: 21px; color: #bbf7d0; margin: 0 auto 26px; max-width: 560px; }
+header.site .tag { font-size: 21px; color: #bbf7d0; margin: 0 auto 14px; max-width: 560px; }
+header.site .pitch { font-size: 17px; font-weight: 600; color: #fff; margin: 0 auto 26px; max-width: 560px; line-height: 1.4; }
 .cta {
   display: inline-block; background: #fff; color: var(--green);
   font-weight: 750; font-size: 17px; padding: 13px 28px; border-radius: 10px;
