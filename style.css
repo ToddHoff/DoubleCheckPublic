@@ -79,6 +79,11 @@ p { color: #374151; }
 .price .amt { font-size: 30px; font-weight: 800; color: var(--green); }
 .price .per { color: var(--muted); font-size: 14px; }
 .price p { font-size: 13.5px; }
+.teams {
+  margin-top: 18px; padding: 16px 20px; background: var(--green-pale);
+  border: 1px solid var(--green-border); border-radius: 12px; font-size: 15px;
+}
+.teams a { font-weight: 650; white-space: nowrap; }
 footer.site {
   border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 14px;
 }
