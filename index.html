@@ -111,6 +111,10 @@
           fingerprint, never the value. Next time it confirms “✓ matches Acme’s usual account,”
           or warns “⚠ this is NOT the account you saved for Acme.” The catch for fake “our bank
           details changed” emails, which no checksum can spot.</p></div>
+        <div class="feat"><h3>Two signatures for the highest-stakes fields</h3>
+          <p>Mark a field “require two signatures” and the attestation becomes “<em>We</em> have
+          personally compared…”. Two people each type their name — they must differ — before the
+          check can be confirmed, and both names are saved with the entry.</p></div>
         <div class="feat"><h3>Find the risky fields for you</h3>
           <p>Right-click a page and choose “Find fields to double-check.” Double Check scans the
           page and tags the high-value fields — account and routing numbers, amounts, IDs — so you
@@ -149,12 +153,27 @@
         <div class="feat"><h3>Proof without the value</h3>
           <p>Every attested check is logged: when, where, what format, which methods, your
           attestation — never the value itself. Export CSV/JSON for your records.</p></div>
+        <div class="feat"><h3>A tamper-evident log</h3>
+          <p>Every entry is sealed with a keyed hash chained to the one before it. One click
+          recomputes the chain and tells you whether anything was edited, removed, or reordered
+          since it was written — on this device. It’s integrity, not identity or legal proof.</p></div>
+        <div class="feat"><h3>Notes on a check</h3>
+          <p>Add an optional note — where a value came from, how it was calculated. It’s saved and
+          sealed with the entry. (Keep the value itself out of it; that’s never stored.)</p></div>
+        <div class="feat"><h3>See what it’s caught</h3>
+          <p>A running, local-only tally of what Double Check has actually caught for you —
+          mismatches, bad values, account-change warnings, page problems. Real events, never an
+          estimated dollar figure.</p></div>
         <div class="feat"><h3>It remembers each site</h3>
           <p>Confirm a field is an IBAN once and the right format is preselected on that site
           forever after.</p></div>
         <div class="feat"><h3>Your own formats</h3>
           <p>Vendor IDs, policy numbers, internal schemes — defined as data (patterns, lengths,
           checksum algorithms), never code, and shareable with your team as files.</p></div>
+        <div class="feat"><h3>Expected amount range</h3>
+          <p>Give a format an expected min/max. A value that parses as an amount outside it gets a
+          soft warning — never a block — so an unusually large wire stands out. The bounds are your
+          own configuration; no past values are stored.</p></div>
         <div class="feat"><h3>Submit Guard<span class="beta">beta</span></h3>
           <p>Flip it on for a site and its forms won’t submit while a field you double-check
           there is unverified or was edited after checking.</p></div>
