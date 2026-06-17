@@ -14,7 +14,7 @@ custom domain via a Cloudflare CNAME to `toddhoff.github.io` (done June
 
 ## After the store listing goes live
 
-1. Replace `CHROME_STORE_URL_TODO` (two places in `index.html`) with the
-   real Chrome Web Store listing URL.
+1. ~~Replace `CHROME_STORE_URL_TODO` in `index.html`~~ — done June 2026; the
+   CTAs link to https://chromewebstore.google.com/detail/double-check/mnkfkinaakgknifodgbcakgflnaelhpe.
 2. Verified-publisher badge: verify the domain in Google Search Console,
    then set it as the verified website in the Chrome Web Store dashboard.
