@@ -215,6 +215,50 @@
     </section>
 
     <section>
+      <h2>Formats it verifies out of the box</h2>
+      <p>Two checks apply to <em>everything</em> below: blind double-entry (you re-type from your
+      source and the two readings must agree) and look-alike / hidden-character detection (a
+      Cyrillic “а”, a full-width “０”, a zero-width space). On top of that, each format gets:</p>
+
+      <h3>Mathematically checksummed — a single wrong character is caught instantly</h3>
+      <ul class="formats">
+        <li><strong>US routing number (ABA)</strong> — 9 digits; ABA mod-10 check digit computed and verified.</li>
+        <li><strong>IBAN</strong> — ISO 13616 mod-97 check; verifies the country-specific length and names the destination country.</li>
+        <li><strong>Payment card number</strong> — 12–19 digits; Luhn check digit; identifies the card network from the prefix.</li>
+        <li><strong>CLABE (Mexico)</strong> — 18 digits; CLABE mod-10 weighted check digit.</li>
+        <li><strong>CUSIP (US security ID)</strong> — 9 chars; CUSIP mod-10 check digit.</li>
+        <li><strong>ISIN (international security ID)</strong> — 12 chars; Luhn-based check digit over the letter-expanded value.</li>
+        <li><strong>VIN (vehicle ID)</strong> — 17 chars; mod-11 check digit with the standard transliteration.</li>
+        <li><strong>Bitcoin address</strong> — Base58Check for legacy addresses, Bech32/Bech32m for SegWit — full checksum.</li>
+        <li><strong>Ethereum address</strong> — 40 hex chars; EIP-55 mixed-case checksum verified when the address is checksum-cased.</li>
+      </ul>
+
+      <h3>Structurally validated — no formal checksum, but impossible values are rejected</h3>
+      <ul class="formats">
+        <li><strong>US Social Security number</strong> — rejects never-issued ranges (area 000/666/900+, group 00, serial 0000).</li>
+        <li><strong>US EIN (employer ID)</strong> — rejects prefixes the IRS never issues.</li>
+        <li><strong>SWIFT / BIC code</strong> — validates the ISO country code at positions 5–6 and names the bank’s country.</li>
+        <li><strong>IP address (v4 or v6)</strong> — full structural validity (octet ranges, group rules, “::” compression).</li>
+        <li><strong>Date</strong> (MM/DD/YYYY, DD/MM/YYYY, YYYY-MM-DD) — real-calendar validity for the chosen order.</li>
+        <li><strong>Currency amount</strong> — parses US and European separators, refuses genuinely ambiguous ones, and confirms the value in words.</li>
+      </ul>
+
+      <h3>Shape-checked — format and length, so blind double-entry is the real check</h3>
+      <ul class="formats">
+        <li><strong>US bank account number</strong> — 4–17 digits; flagged as having no public checksum.</li>
+        <li><strong>UK sort code</strong> — 6 digits.</li>
+        <li><strong>Phone number</strong> — E.164-style (+ and 7–15 digits).</li>
+        <li><strong>Email address</strong> — local@domain.tld structure.</li>
+        <li><strong>Number (any)</strong> and <strong>Text (exact match)</strong> — pure double-entry.</li>
+      </ul>
+
+      <p>Need something niche — a vendor ID, a policy number, an internal account scheme? Define your
+      own in the Formats tab: clean-up rules, a pattern, a length range, a checksum from a menu of
+      standard algorithms, and an optional “unusually large” amount warning. Formats are data, not
+      code, and export as files your team can share.</p>
+    </section>
+
+    <section>
       <h2>Pricing</h2>
       <div class="price-row">
         <div class="price"><div class="amt">$4.99</div><div class="per">per month</div>

@@ -108,3 +108,6 @@ code {
   font-family: ui-monospace, Menlo, monospace; font-size: 14px;
   background: #f3f4f6; padding: 0 5px; border-radius: 5px;
 }
+.formats { line-height: 1.5; padding-left: 20px; }
+.formats li { margin-bottom: 6px; }
+.formats strong { color: #166534; }
